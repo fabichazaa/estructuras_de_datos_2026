@@ -1,10 +1,11 @@
 # EXERCISE 1
-x = 7
-y = x + 1 # y = 8
-y = y + 2 # y = 10
-z = x + 2 * y # z = 7 + 2 * 10 = 27 multiplication has priority over addition
-z = z - 1 # z = 26
-print("Final value of z is", z)
+def ex1():
+    x = 7
+    y = x + 1 # y = 8
+    y = y + 2 # y = 10
+    z = x + 2 * y # z = 7 + 2 * 10 = 27 multiplication has priority over addition
+    z = z - 1 # z = 26
+    print("Final value of z is: ", z)
 
 # EXERCISE 2
 def ex2_a(x):
@@ -21,8 +22,38 @@ def ex2_b(x):
         y = 1
     return y
 
-x2a = 8
-print("Fun 2a needs x to be greater than 7 for y to be 1. x = ", x2a, " y = ",ex2_a(x2a))
+def ex2():
+    x2a = 8
+    print("Fun 2a needs x to be greater than 7 for y to be 1. x = ", x2a, " y = ",ex2_a(x2a))
 
-x2b = 4
-print("Fun 2b needs x to be greater than 3 for y to be 1. x = ", x2b, " y = ",ex2_b(x2b))
+    x2b = 4
+    print("Fun 2b needs x to be greater than 3 for y to be 1. x = ", x2b, " y = ",ex2_b(x2b))
+
+# EXERCISE 3
+def ex3():
+    n = 4
+    m = 0
+    iteration = 0
+    while n > 0:
+        m = m + 2
+        n = n - 1
+        iteration += 1
+        print(f"Iteration n{iteration} | m = {m} , n = {n}\n")
+
+# EXERCISE 4
+def switch_variables():
+    a = int(input("Insert value for a: "))
+    b = int(input("Insert value for b: "))
+
+    old_a = a
+    a = b
+    b = old_a
+
+    print("Variable a now is: ", a)
+    print("Variable b now is: ", b)
+
+# EXERCISE 5
+# EXERCISE 6
+
+# EXECUTION SECTION
+switch_variables()
