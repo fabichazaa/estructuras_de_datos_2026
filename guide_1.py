@@ -53,7 +53,114 @@ def switch_variables():
     print("Variable b now is: ", b)
 
 # EXERCISE 5
+def positive_or_negative(a, b):
+    if a > 0 and b > 0:
+        return a + b
+    else:
+        return a*b
+    
 # EXERCISE 6
+def fibonacci(n):
+    if n == 1:
+        return 0
+    elif n == 2:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+# EXERCISE 7
+def quantity_of_appearences(n, list):
+    counter = 0
+
+    for i in range(len(list)):
+        if n == list[i]:
+            counter += 1
+
+    return counter
+
+# EXERCISE 8
+def add_max_and_min(list):
+    if len(list) < 2:
+        return "The list needs at least 2 elements."
+    
+    max = list[0]
+    min = list[0]
+
+    for i in range(1, len(list)):
+        if list[i] > max:
+            max = list[i]
+        if list[i] < min:
+            min = list[i]
+    
+    return f"Max is {max}\nMin is {min}\nAddition is: {max+min}"
+
+# EXERCISE 9
+def add_elements(list):
+    length = len(list)
+    if not (length > 2 and length%2 != 0):
+        return "List not valid."
+    print(f"Start value: {list[0]}\nMiddle value: {list[int(length/2)]}\nLast value: {list[length-1]}")
+    return list[0] + list[int(length/2)] + list[length-1]      
+
+# EXERCISE 10
+def add_odd_squares(n):
+    addition = 0
+    for i in range(1,n):
+        if i%2 != 0:
+            addition += i**2
+    return addition
+
+# EXERCISE 11
+def are_there_more_positives(list):
+    positive_count = 0
+    negative_count = 0
+
+    for i in range(len(list)):
+        if list[i] > 0:
+            positive_count += 1
+        else:
+            negative_count += 1
+    
+    return positive_count > negative_count
+
+# EXERCISE 12
+def vowel_quantity(string):
+    vowels = ["a", "e", "i", "o","u"]
+    vowel_count = 0
+
+    for i in range(len(string)):
+        if string[i].lower() in vowels:
+            vowel_count += 1
+
+    return vowel_count
+
+# EXERCISE 13
+def are_all_equal(list):
+    length = len(list)
+
+    if length <= 1:
+        return True
+    
+    current = list[0]
+
+    for i in range(1, len(list)):
+        if current == list[i]:
+            current = list[i]
+        else:
+            return False
+        
+    return True
+
+def does_odd_product_exist(list):
+    length = len(list)
+    for i in range(length-1):
+        for j in range(i+1, length):
+            print(f"i value: {list[i]}\nj value: {list[j]}\nproduct: {list[i]*list[j]}")
+            print("--------------------------------------")
+            product = list[i] * list[j]
+            if product % 2 != 0:
+                return True
+    return False
 
 # EXECUTION SECTION
-switch_variables()
+print(does_odd_product_exist([0,2,3,4,2]))
