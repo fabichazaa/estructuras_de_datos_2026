@@ -60,6 +60,7 @@ def positive_or_negative(a, b):
         return a*b
     
 # EXERCISE 6
+# Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13
 def fibonacci(n):
     if n == 1:
         return 0
@@ -67,6 +68,15 @@ def fibonacci(n):
         return 1
     else:
         return fibonacci(n-1) + fibonacci(n-2)
+
+def fibonacciBerty(n):
+    a, b = 0,1
+    iterator = 0
+
+    while iterator < n-1:
+        a, b = b, a + b # simultaneos assignment, no values are lost
+        iterator += 1
+    return a
 
 # EXERCISE 7
 def quantity_of_appearences(n, list):
@@ -99,7 +109,9 @@ def add_elements(list):
     length = len(list)
     if not (length > 2 and length%2 != 0):
         return "List not valid."
+    
     print(f"Start value: {list[0]}\nMiddle value: {list[int(length/2)]}\nLast value: {list[length-1]}")
+    # length // 2 can be used to obtain the integer division without needing to cast 
     return list[0] + list[int(length/2)] + list[length-1]      
 
 # EXERCISE 10
@@ -134,21 +146,17 @@ def vowel_quantity(string):
 
     return vowel_count
 
-# EXERCISE 13
-def are_all_equal(list):
+# EXERCISE 13 - All elements vs all elements, it is not enough with pairs!
+def are_all_diff(list):
     length = len(list)
 
     if length <= 1:
         return True
-    
-    current = list[0]
 
-    for i in range(1, len(list)):
-        if current == list[i]:
-            current = list[i]
-        else:
-            return False
-        
+    for i in range(0, length):
+        for j in range (i+1, length):
+            if list[i] == list[j]:
+                return False  
     return True
 
 def does_odd_product_exist(list):
@@ -162,5 +170,18 @@ def does_odd_product_exist(list):
                 return True
     return False
 
+# only the product of 2 odd numbers result in an odd number
+# finding 2 odd numbers is enough to return True
+def does_odd_product_exist_v2(list):
+    odd_count = 0
+    for element in list:
+        if element % 2 != 0:
+            odd_count += 1
+
+        if odd_count == 2:
+            return True
+    return False
+
+
 # EXECUTION SECTION
-print(does_odd_product_exist([0,2,3,4,2]))
+#print(does_odd_product_exist([0,2,3,4,2]))
