@@ -183,5 +183,48 @@ def does_odd_product_exist_v2(list):
     return False
 
 
+# List REVIEW
+def list_review():
+    myList = [1,2,3,4,5]
+    print("My list: ", myList)
+
+    # 1. Adding an element at the end
+    myList.append(10)
+    print("List after appending 1: ", myList)
+
+    # for some reason a different type to the list its possible
+    # myList.append("boop")
+
+    # 2. Removing an element by index using .pop - returns element removed
+    print("Popping element at index 0 -> ", myList.pop(0))
+    print("List after popping index 0: ", myList)
+
+    # 3. Removing an element with pop (removes last element) - returns element removed
+    print("Popping element without specifying index ->", myList.pop())
+    print("List after popping without specifying index: ", myList)
+
+    # 4. Removing an element by index using .pop - when index does not exist
+    # print("Popping element at index 10, does not exist -> ", myList.pop(10)) 
+    # ERROR pop index out of range
+
+    # 5. Removing an element using .pop - when the list is empty
+    # print("Popping element at index 10, does not exist -> ", [].pop())
+    # ERROR pop from empty list
+
+    # 6. Removing an element using remove - returns list without element
+    print("Removing element 3 -> ", myList.remove(3))
+    print("List after removing element 3: ", myList)
+
+    # 7. Removing an element using remove that DOES NOT exist - returns list without element
+    print("Removing element 10 -> ", myList.remove(10))
+    # ERROR x not in list
+
+# Range REVIEW
+def range_review():
+    # range(n) goes from 0 to n-1
+    print("range (5): ", list(range(5)))
+    # range(m,n) goes from m to n-1
+    print("range (1,8)", list(range(1,8)))
+
+
 # EXECUTION SECTION
-#print(does_odd_product_exist([0,2,3,4,2]))
