@@ -1,3 +1,4 @@
+# ⋆ GUIDE 1 ⋆
 # EXERCISE 1
 def ex1():
     x = 7
