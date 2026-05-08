@@ -8,15 +8,22 @@ def linearSearch(list: list[int], elem: int):
 def binarySearch(list: list[int], elem: int):
     i = 0
     n = len(list)-1
-    while(i < n):
-        middle = int(n/2)
+    while(i <= n):
+        middle = (n+i) // 2
         print(f"Start {i} | Middle {middle} | End {n}")
+        
         if(list[middle] == elem):
             return True
         elif(list[middle] > elem):
-            n = middle
+            print("Element is smaller than middle")
+            n = middle - 1
+            print(f"New end: {n}")
         else:
-            i = middle
+            i = middle + 1
+            print("Element is greater than middle")
+            print(f"New start: {i}")
+
+    return False
 
 def insertionSort(list: list[int]):
     n = len(list)
@@ -67,9 +74,22 @@ def selection_sort(lista: list[int]):
         print(f"Lista tras intercambio: {lista}")
         print("-" * 30)
 
-def argmin(lista: list[int], desde: int):
-    
-    return i_min
+# BUBBLE SORT
+# Starts at the first element of the list, and compares it with the next element,
+# if it is greater than the next element, it swaps them, 
+# and continues to compare it with the next element until it reaches the end of the list, then it starts again from the first element until the list is sorted.
+def bubble_sort(lista: list[int]):
+    print(f"Estado inicial: {lista}\n" + "-"*30)
+    for i in range(len(lista)-1):
+        print(f"Iteración i: {i}")
+        for j in range(len(lista)-1): 
+            print("Iteracion j:", j) 
+            print(f"Comparando {lista[j]} con {lista[j+1]}")
+            if lista[j] > lista[j+1]:
+                swap(lista, j, j+1)
+                print(f"Intercambiando {lista[j]} con {lista[j+1]}")
+            print("----"*5)
+        print("--------"*5)
 
 
 def swap(lista: list[int], i: int, j: int):
@@ -78,5 +98,8 @@ def swap(lista: list[int], i: int, j: int):
     lista[j] = aux
 
 
-# INV(i) = el objetivo no esta en los primeros i valores de la lista
-print(selection_sort([4,2,5,1]))
+
+inicio = 0
+fin = 7
+mitad = (inicio + fin) // 2
+print(selection_sort([5,4,3,2,1]))
