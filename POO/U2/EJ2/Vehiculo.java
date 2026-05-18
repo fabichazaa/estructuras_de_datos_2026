@@ -20,4 +20,9 @@ public abstract class Vehiculo {
     public String getModelo() {
         return this.modelo;
     }
+
+    @Override
+    public String toString() {
+        return this.modelo + " " + this.color + " | " + this.patente;
+    }
 }

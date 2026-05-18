@@ -1,12 +1,9 @@
 {
-    "java.completeness.activated": true,
-    "textmate.colorTheme": "Default Light+",
-    // Add the diagnostic settings below to ignore the warnings
     "java.diagnostics.settings": {
         "rules": {
-            "deadCode": "ignore",          // Ignores "Constructor is never used"
-            "finalParameter": "ignore",     // Ignores parameters that can be final
-            "localVariableCanBeFinal": "ignore" // Ignores "Field/Variable can be final"
+            "deadCode": "ignore",
+            "localVariableCanBeFinal": "ignore",
+            "finalParameter": "ignore"
         }
     }
 }

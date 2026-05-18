@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//NetBeans//DTD Tool Configuration 1.0//EN" "http://www.netbeans.org/dtds/tool-configuration-1_0.dtd">
+<configuration>
+    <tool kind="hints" name="java">
+        <!-- Disables Field can be final hints -->
+        <node name="org.netbeans.modules.java.hints.style.CanBeFinal.field">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.style.CanBeFinal">
+            <attribute name="enabled" value="false"/>
+        </node>
+        
+        <!-- Disables Unused Constructor / Element hints -->
+        <node name="org.netbeans.modules.java.hints.declarations.UnusedElement">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="org.netbeans.modules.java.hints.EmptyStatements.unused">
+            <attribute name="enabled" value="false"/>
+        </node>
+        
+        <!-- Broad Style/Declaration suppressions as backup -->
+        <node name="style">
+            <attribute name="enabled" value="false"/>
+        </node>
+        <node name="declarations">
+            <attribute name="enabled" value="false"/>
+        </node>
+    </tool>
+</configuration>
