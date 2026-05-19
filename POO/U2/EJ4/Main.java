@@ -1,4 +1,6 @@
 public class Main {
+    @SuppressWarnings("unused")
+
     public static void main(String[] args) {
         Vuelo vuelo1 = new Vuelo("Buenos Aires", "Miami", 2);
         Vuelo vuelo2 = new Vuelo("Buenos Aires", "Paris", 3);

@@ -1,7 +1,7 @@
 public class Cancion {
-    private String nombre;
-    private String autor;
-    private String duracion;
+    private final String nombre;
+    private final String autor;
+    private final String duracion;
     private String genero;
 
     public Cancion(String nombre, String autor, String duracion){

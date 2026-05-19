@@ -64,6 +64,8 @@ public class Tarea {
 
     @Override
     public String toString() {
-        return "Tarea " + identificadorUnico + ": " + title + " - " + description + " (Fecha de entrega: " + fechaEntrega + ", Estado: " + (estado ? "Completada" : "Pendiente") + ")";
+        return "Tarea " + this.identificadorUnico + ": " + this.title + " - " 
+        + this.description + " (Fecha de entrega: " + this.fechaEntrega + ", Estado: " 
+        + (this.estado ? "Completada" : "Pendiente") + ")";
     }
 }
