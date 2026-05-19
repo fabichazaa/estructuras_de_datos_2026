@@ -23,4 +23,16 @@ public class Puerta {
     public String getZonaAsignada() {
         return this.zonaAsignada;
     }
+
+    public void abrirPuerta() {
+        this.estado = true;
+    }
+
+    public void cerrarPuerta() {
+        this.estado = false;
+    }
+    
+    public void cambiarEstado() {
+        estado = !estado;
+    }
 }

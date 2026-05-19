@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -9,13 +10,14 @@ public class Empleado {
     private String rol;
     private final String numeroTarjeta;
 
-    private List<Permiso> permisos;
+    private final List<Permiso> permisos;
 
     public Empleado(String nombre, String rol) {
         this.nombre = nombre;
         this.rol = rol;
         this.idEmpleado = rand.nextInt(10000);
         this.numeroTarjeta = generarUUID();
+        this.permisos = new ArrayList<>();
     }
 
     private String generarUUID() {
@@ -43,12 +45,9 @@ public class Empleado {
         this.rol = rol;
     }
 
-    public void agregarPermiso(Permiso nuevoPermiso) {
-        this.permisos.add(nuevoPermiso);
-    }
-
-    private Permiso encontrarPermiso(int idPermiso) {
-        for (Permiso permiso: permisos) {
+    private Permiso encontrarPermiso(Permiso permisoBuscado) {
+        int idPermiso = permisoBuscado.getIdPermiso();
+        for (Permiso permiso: this.permisos) {
             if (permiso.getIdPermiso() == idPermiso) {
                 return permiso;
             }
@@ -56,10 +55,45 @@ public class Empleado {
         return null;
     }
 
-    public boolean removerPermiso(int idPermiso) {
-        Permiso permisoBuscado = encontrarPermiso(idPermiso);
+    private Permiso encontrarPermisoPorPuerta(Puerta permisoPuerta) {
+        int idPuerta = permisoPuerta.getIdPuerta();
+        for (Permiso permiso: this.permisos) {
+            if (permiso.getPuerta().getIdPuerta() == idPuerta) {
+                return permiso;
+            }
+        }
+        return null;
+    }
+
+    public void agregarPermiso(Permiso nuevoPermiso) {
+        this.permisos.add(nuevoPermiso);
+    }
+
+    public boolean removerPermiso(Permiso permiso) {
+        Permiso permisoBuscado = encontrarPermiso(permiso);
         if (permisoBuscado != null) {
+            this.permisos.remove(permisoBuscado);
         }
         return false;
+    }
+
+    public boolean abrirPuerta(Puerta puerta) {
+        Permiso permiso = encontrarPermisoPorPuerta(puerta);
+        if (permiso != null) {
+            puerta.abrirPuerta();
+            return true;
+        }
+        return false;
+    }
+
+    public void listarPermisos() {
+        for (Permiso permiso: this.permisos){
+            System.out.println(permiso.toString());
+        }
+    }
+
+    @Override
+    public String toString() {
+        return this.nombre + " - " + this.rol;
     }
 }

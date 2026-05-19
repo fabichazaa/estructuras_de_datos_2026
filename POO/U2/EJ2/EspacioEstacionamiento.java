@@ -59,6 +59,6 @@ public class EspacioEstacionamiento {
     public String toString() {
         return "-- Espacio Estacionamiento --\nNumero Unico: " + this.numeroUnico + 
         "\nEstado: " + (this.estado ? "Disponible" : "Ocupado")
-        + "\nVehiculo: " + this.vehiculo == null ? "-" : this.vehiculo.toString() + "\n";
+        + "\nVehiculo: " + (this.vehiculo == null ? "-" : this.vehiculo.toString()) + "\n";
     }
 }

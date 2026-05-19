@@ -1,5 +1,5 @@
-
-public static void main(String[] args) {
+public class Main {
+    public static void main(String[] args) {
     CuentaRedSocial taylorSwift = new CuentaRedSocial("taylorswift13", "taylorswift13@industry.com");
 
     CuentaRedSocial fan1 = new CuentaRedSocial("fan1", "fan1@gmail.com");
@@ -25,6 +25,5 @@ public static void main(String[] args) {
 
     System.out.println("** Información de la cuenta de Taylor Swift **");
     System.out.println(taylorSwift.toString());
-
-
+    }
 }
