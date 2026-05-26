@@ -1,9 +1,0 @@
-{
-    "java.diagnostics.settings": {
-        "rules": {
-            "deadCode": "ignore",
-            "localVariableCanBeFinal": "ignore",
-            "finalParameter": "ignore"
-        }
-    }
-}
