@@ -1,5 +1,5 @@
 class SortedSequence:
-    def __init__(self): # O(1)
+    def __init__(self):
         self.data = []
         self.size = 0
     
@@ -41,41 +41,18 @@ class SortedSequence:
         self.data = new_data
         self.size -= 1
 
-    def insert(self, value): # O(n)
-        i = 0
-        while i < self.size and self.data[i] < value:
-            i += 1
-        self.insert_at(i, value)
+    def insert_first(self, value): # O(n)
+        self.insert_at(0, value)
 
+    def insert_last(self, value): # O(1)
+        self.insert_at(self.size, value)
+    
     def delete_first(self): # O(n)
         self.delete_at(0)
     
     def delete_last(self): # O(1)
         self.delete_at(self.size - 1)
 
-    def get_at(self, i: int):
-        if i < 0 or i >= self.size:
-            raise Exception("Index out of bounds")
-        
-        return self.data[i]
-    
-    # Binary Search
-    def exists(self, value): # O(log n)
-        left = 0
-        right = self.size - 1
-
-        while left <= right:
-            mid = (left + right) // 2
-
-            if self.data[mid] == value:
-                return True
-            elif self.data[mid] < value:
-                left = mid + 1
-            else:
-                right = mid - 1
-        
-        return False
-    
     def __repr__(self): # O(n)
         conj_str = ""
 
