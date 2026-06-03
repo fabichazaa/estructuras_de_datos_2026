@@ -5,6 +5,7 @@ from Set import Set
 from Dictionary import Dictionary
 from SquaredMatrix import SquaredMatrix
 from MultiSet import MultiSet
+from LinkedList import LinkedList
 
 # Fixed Set
 def fixedSet():
@@ -133,4 +134,22 @@ def multiSet():
     print("Cardinality (total):", ms.cardinal())
     print("Multiplicity of 5:", ms.multiplicity(5))
 
-multiSet()
+# Linked List
+def linkedList():
+    ll = LinkedList()
+    ll.insert_last(1)
+    ll.insert_last(3)
+    ll.insert_last(5)
+    ll.insert_first(7)
+    print(ll)
+    ll.insert_at(4, 2)
+    print(ll)
+    print("Index of 3: ", ll.index_of(3))
+    print("Index of 100: ", ll.index_of(100))
+    print("5 exists?", ll.exists(5))
+    print("90 exists?", ll.exists(90))
+    print("Length: ", ll.len())
+    ll.delete_element(5)
+    print(ll)
+
+linkedList()
